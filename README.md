@@ -1,3 +1,9 @@
+# install
+
+```
+npm i apollo-resolver-middleware
+```
+
 # usage
 
 add middlewares in schema.js where resolvers defined
@@ -19,7 +25,8 @@ const resolvers = {
   Query: {
     getData: (parent, args, context, info) => {
       return {
-        success: true
+        success: true,
+        message: ''
       }
     }
   }
@@ -36,14 +43,17 @@ module.exports = { typeDefs, resolvers }
 
 # api
 
+```
 applyResolverMid(resolvers, path, fn)
+```
+
 
 - resolvers: the apollo resolvers you defined
 - path: specific resolver path
 - fn: the middleware function
 
 # middleware
-- the first tow args are `args` and `context` from the graphql resolver
+- the first tow arguments are `args` and `context` from the graphql resolver
 - call `next` to excute the next middleware
 
 ```javascript
