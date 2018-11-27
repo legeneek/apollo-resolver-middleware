@@ -54,7 +54,7 @@ applyResolverMid(resolvers, path, fn)
 
 # middleware
 - the first tow arguments are `args` and `context` from the graphql resolver
-- always call `next` to excute the next middleware
+- call `next` if you want to execute the next middleware
 
 ```javascript
 middleware(args, context, next) {
